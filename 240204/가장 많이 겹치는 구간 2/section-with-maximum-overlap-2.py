@@ -10,15 +10,11 @@ for i in range(n):
 vertical.sort()
 
 checker = set()
-l, result = 0, 0
+result = 0
 for x, v, i in vertical:
     if v == 1:
         checker.add(i)
         continue
-    if len(checker) > l:
-        result = 1
-        l = len(checker)
-    elif len(checker) == l:
-        result += 1
+    result = max(result, len(checker))
     checker.remove(i)
 print(result)
