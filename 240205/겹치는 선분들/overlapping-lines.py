@@ -22,7 +22,7 @@ answer = 0
 for x, v in points:
     if v == 1:
         pSum += 1
-        if pSum >= k:
+        if pSum == k:
             prev = x
     else:
         if pSum == k:
