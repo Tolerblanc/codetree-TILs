@@ -1,4 +1,5 @@
 import sys
+import heapq
 input = sys.stdin.readline
 
 n = int(input())
@@ -10,24 +11,14 @@ for i in range(n):
 points.sort()
 answer = [0] * n
 
-checker = set() # i번 컴퓨터 사용중
-com = dict() # key 유저가 value 컴퓨터 사용 중
 pSum = 0
+coms = [i for i in range(1, n + 1)]
+heapq.heapify(coms)
 for x, v, i in points:
     pSum += v
     if v == 1:
-        if pSum in checker:
-            for j in range(1, n + 1):
-                if j not in checker:
-                    answer[i] = j
-                    checker.add(j)
-                    com[i] = j
-                    break
-        else:
-            answer[i] = pSum
-            com[i] = pSum
-            checker.add(pSum)
+        answer[i] = heapq.heappop(coms)
     else:
-        checker.remove(com[i])
+        heapq.heappush(coms, answer[i])
 
 print(*answer)
