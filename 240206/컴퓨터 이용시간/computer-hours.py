@@ -11,11 +11,9 @@ for i in range(n):
 points.sort()
 answer = [0] * n
 
-pSum = 0
 coms = [i for i in range(1, n + 1)]
 heapq.heapify(coms)
-for x, v, i in points:
-    pSum += v
+for _, v, i in points:
     if v == 1:
         answer[i] = heapq.heappop(coms)
     else:
