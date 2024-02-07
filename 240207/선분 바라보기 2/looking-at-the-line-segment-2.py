@@ -17,7 +17,7 @@ for x, v, y, i in points:
     if v == 1: # 시작점이면
         if not check: # 기존에 시작한 선분이 없다면
             answer += 1
-        if height and height[0][0] > y: # 지금 선분이 더 가까이 있다면
+        elif height and height[0][0] > y: # 지금 선분이 더 가까이 있다면
             answer += 1
         heapq.heappush(height, (y, i)) # 힙에 추가
         check.add(i)
@@ -26,7 +26,7 @@ for x, v, y, i in points:
         check.remove(i)
         if height[0][1] == i: # 만약 제거 대상이 맨 앞에 있던 선분이라면
             heapq.heappop(height)
-            while height and height[0][1] in check: # 맨 앞에 있는 선분이 check에 있을 때까지:
+            while height and height[0][1] not in check: # 맨 앞에 있는 선분이 check에 없으면 제거:
                 heapq.heappop(height)
-            answer += 1 # 보고 있는 높이가 갱신되었으므로 +1
-print(answer)
+
+print(answer - 1) # 맨 마지막에 체크된건 제거해줘야함
