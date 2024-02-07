@@ -28,5 +28,6 @@ for x, v, y, i in points:
             heapq.heappop(height)
             while height and height[0][1] not in check: # 맨 앞에 있는 선분이 check에 없으면 제거:
                 heapq.heappop(height)
+            answer += 1
 
 print(answer - 1) # 맨 마지막에 체크된건 제거해줘야함
