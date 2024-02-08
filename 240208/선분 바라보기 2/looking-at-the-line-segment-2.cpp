@@ -38,6 +38,8 @@ int main() {
                 input[i][1] = it->second;
             if (input[i][2] >= it->first && input[i][2] <= it->second)
                 input[i][2] = it->first;
+            if(input[i][1] >= input[i][2])
+                break;
         }
         if(input[i][1] < input[i][2])
             lines.push_back({input[i][1],input[i][2]});
