@@ -36,7 +36,7 @@ int main() {
         for(auto it = lines.begin(); it != lines.end(); ++it) {
             if (input[i][1] >= it->first && input[i][1] <= it->second)
                 input[i][1] = it->second;
-            if (input[i][2] >= it->first && input[i][2] <it->second)
+            if (input[i][2] >= it->first && input[i][2] <= it->second)
                 input[i][2] = it->first;
         }
         if(input[i][1] < input[i][2])
