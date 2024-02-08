@@ -24,6 +24,8 @@ bool sortFunc(vector<int> vec1, vector<int> vec2) {
 }
 
 int main() {
+    cin.tie(0);
+    ios::sync_with_stdio(0);
     vector<vector<int>> input = getInput();
     sort(input.begin(), input.end(), sortFunc);
     int ans = 0;
