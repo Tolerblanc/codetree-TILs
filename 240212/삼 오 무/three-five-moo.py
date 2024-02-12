@@ -3,7 +3,7 @@ input = sys.stdin.readline
 
 n = int(input())
 
-answer = 101010101
+answer = 1010101010
 left, right = 0, int(1e9)
 while left <= right:
     mid = (left + right) // 2 # 1 ~ mid 안쪽에 숫자가 몇 개 있는가?
