@@ -16,9 +16,9 @@ def check(dist):
             continue
         if prev < start:
             prev = start
-        cnt += (end - prev) // dist + 1
-        prev += (end - prev) // dist
-
+        dots = (end - prev) // dist + 1
+        cnt += dots
+        prev += (dots - 1) * dist
     return cnt >= n
 
 answer = 0
