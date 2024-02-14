@@ -9,16 +9,17 @@ for _ in range(m):
 lines.sort()
 
 def check(dist):
-    cnt = 0
+    cnt = 1
     prev = lines[0][0]
     for start, end in lines:
-        if prev > end:
+        if prev + dist > end:
             continue
-        if prev < start:
+        if prev + dist < start:
             prev = start
-        dots = (end - prev) // dist + 1
+            cnt += 1
+        dots = max((end - prev) // dist, 0)
         cnt += dots
-        prev += (dots - 1) * dist
+        prev += dots * dist
     return cnt >= n
 
 answer = 0
