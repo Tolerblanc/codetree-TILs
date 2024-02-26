@@ -10,7 +10,7 @@ def backtracking(depth):
         return
     
     for i in range(1, k + 1):
-        if len(selected) >= 3 and selected[-1] == selected[-2] == i:
+        if len(selected) >= 2 and selected[-1] == selected[-2] == i:
             continue
         selected.append(i)
         backtracking(depth + 1)
