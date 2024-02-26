@@ -10,7 +10,7 @@ score = [0] * k
 def backtracking(depth):
     global answer
     if depth == n:
-        answer = max(answer, len([s for s in score if s >= m]))
+        answer = max(answer, len([s for s in score if s >= m - 1]))
         return
     
     for i in range(len(score)):
