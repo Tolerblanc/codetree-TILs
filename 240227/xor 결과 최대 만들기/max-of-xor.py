@@ -10,14 +10,14 @@ answer = 0
 def get_xor(numbers):
     result = numbers[0]
     for number in numbers[1:]:
-        result |= number
+        result ^= number
     return result
 
 
 def backtracking(depth, selected):
     global answer
     if depth == m:
-        answer = get_xor(result)
+        answer = max(answer, get_xor(result))
         return
     for i in range(selected + 1, n):
         result.append(nums[i])
@@ -25,5 +25,5 @@ def backtracking(depth, selected):
         result.pop()
 
 
-backtracking(0, 0)
+backtracking(0, -1)
 print(answer)
