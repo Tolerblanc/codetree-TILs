@@ -11,7 +11,7 @@ for l in range(len(nums)):
     while r < len(nums):
         prefix += nums[r]
         r += 1
-        if prefix < s:
+        if prefix >= s:
             break
     ans = min(ans, r - l + 1)
     prefix -= nums[l]
