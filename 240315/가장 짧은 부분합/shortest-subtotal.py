@@ -8,11 +8,10 @@ r = 0
 prefix = 0
 ans = 4242424242424242
 for l in range(len(nums)):
-    while r < len(nums):
+    while r < len(nums) and prefix + nums[r] < s:
         prefix += nums[r]
         r += 1
-        if prefix >= s:
-            break
-    ans = min(ans, r - l + 1)
+    if prefix >= s:
+        ans = min(ans, r - l + 1)
     prefix -= nums[l]
 print(ans)
