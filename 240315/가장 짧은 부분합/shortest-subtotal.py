@@ -15,4 +15,4 @@ for l in range(n):
         break
     ans = min(ans, r - l + 1)
     prefix -= nums[l]
-print(ans)
+print(ans if ans != 4242424242424242 else -1)
